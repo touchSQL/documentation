@@ -4,7 +4,7 @@ if(isset($_POST["submit"])){
 $name = $_POST["name"];
 $query_c = "SELECT * FROM `test` where name like '$name'";
 $query = preg_replace("/ /i", "+", $query_c);
-$url = "https://touchsql.com/api-out.php?database=mydb&api=Your_API&key=Your_Key&query=$query";
+$url = "https://apiout.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=$query";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);
