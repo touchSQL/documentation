@@ -9,7 +9,7 @@ public class Example {
     public static void main(String[] args) throws IOException {
         String query_c = "SELECT * FROM `test` where name like "Gopal"";
         String query = query_c.replaceAll("\s", "+");
-        String url = "https://apiout.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=" + query;
+        String url = "https://get.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=" + query;
 
         URL urlObj = new URL(url);
         HttpURLConnection conn = (HttpURLConnection) urlObj.openConnection();
