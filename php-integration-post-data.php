@@ -5,7 +5,7 @@ $name = $_POST["name"];
 $lname = $_POST["lname"];
 $query_c = "INSERT INTO `test`(`name`,`lname`) VALUES ('$name','$lname')";
 $query = preg_replace("/ /i", "+", "INSERT INTO `test`(`name`,`lname`) VALUES ('$name','$lname')");
-$url = "https://touchsql.com/api-in.php?database=mydb&api=Your_API&key=Your_Key&query=$query";
+$url = "https://apiin.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=$query";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);
