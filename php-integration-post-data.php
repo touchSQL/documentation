@@ -4,7 +4,7 @@ if(isset($_POST["submit"])){
 $name = $_POST["name"];
 $lname = $_POST["lname"];
 $query_c = "INSERT INTO `test`(`name`,`lname`) VALUES ('$name','$lname')";
-$query = preg_replace("/ /i", "+", "INSERT INTO `test`(`name`,`lname`) VALUES ('$name','$lname')");
+$query = preg_replace("/ /i", "+", $query_c);
 $url = "https://post.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=$query";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
