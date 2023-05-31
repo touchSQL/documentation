@@ -4,8 +4,11 @@ if(isset($_POST["submit"])){
 $name = $_POST["name"];
 $query_c = "SELECT * FROM `test` where name like '$name'";
 $query = preg_replace("/ /i", "+", $query_c);
-$url = "https://get.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=$query";
-$ch = curl_init();
+
+// If you use query encryption, you will need to use the following URL: "https://get.touchsql.com/v2/?database=mydb&api=Your_API&key=Your_Key&query=$query".
+
+$url = "https://get.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=$query"; // Use can also use file_get_contents(); method
+$ch = curl_init();   // Use can also use file_get_contents(); method
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);
 $exec = curl_exec($ch);
