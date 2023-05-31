@@ -7,8 +7,11 @@ import org.json.JSONObject;
 
 public class Example {
     public static void main(String[] args) throws IOException {
-        String query_c = "INSERT INTO `test`(`name`,`lname`) VALUES ("Gopal","Dubey")";
+        String query_c = "INSERT INTO `test`(`name`,`lname`) VALUES ('Gopal','Dubey')";
         String query = query_c.replaceAll("\s", "+");
+        
+        // If you use query encryption, you will need to use the following URL: "https://post.touchsql.com/v2/?database=mydb&api=Your_API&key=Your_Key&query=query".
+
         String url = "https://post.touchsql.com/?database=mydb&api=Your_API&key=Your_Key&query=" + query;
 
         URL urlObj = new URL(url);
